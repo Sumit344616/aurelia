@@ -15,7 +15,6 @@ import CraftSection from "@/components/CraftSection";
 import AtelierQuiet from "@/components/AtelierQuiet";
 import BrandStory from "@/components/BrandStory";
 import CampaignStack from "@/components/CampaignStack";
-import SignaturePiece from "@/components/SignaturePiece";
 import BridalSection from "@/components/BridalSection";
 import SocialProof from "@/components/SocialProof";
 import JournalSection from "@/components/JournalSection";
@@ -73,10 +72,6 @@ export default function Home() {
         <BrandStory />
 
         <CampaignStack />
-
-        <SignaturePiece
-          onEnquire={(name) => handleOpenConsultation(name)}
-        />
 
         <BridalSection />
 

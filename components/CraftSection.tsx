@@ -146,11 +146,14 @@ export default function CraftSection() {
                     </div>
 
                     {isActive && (
-                      <div className="mt-3 pt-3 border-t border-white/10 space-y-1">
+                      <div
+                        key={`stage-details-${stage.step}`}
+                        className="mt-3 pt-3 border-t border-[#C6A15B]/30 space-y-1 animate-canva-rise"
+                      >
                         <p className="text-xs text-[#C6A15B] font-light tracking-wide">
                           {stage.subtitle}
                         </p>
-                        <p className="text-xs text-[#F5F0E8]/70 font-light leading-relaxed pt-1">
+                        <p className="text-xs text-[#F5F0E8]/80 font-light leading-relaxed pt-1">
                           {stage.description}
                         </p>
                       </div>

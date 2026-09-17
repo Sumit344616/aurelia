@@ -159,3 +159,51 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Canva-style Video/Slide Pan & Rise Animations */
+@keyframes canvaPanReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(14px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.animate-canva-pan {
+  animation: canvaPanReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes canvaTextRise {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-canva-rise {
+  animation: canvaTextRise 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes canvaSoftDrift {
+  0% {
+    opacity: 0;
+    transform: scale(1.03) translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-canva-drift {
+  animation: canvaSoftDrift 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

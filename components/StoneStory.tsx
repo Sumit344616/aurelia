@@ -147,7 +147,10 @@ export default function StoneStory() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left: Macro Gemstone Image */}
           <div className="lg:col-span-6 flex justify-center">
-            <div className="relative w-full max-w-md aspect-square rounded-sm overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.9)] border border-white/10 group bg-[#0B0A08]">
+            <div
+              key={`stone-img-${activeStone.id}`}
+              className="relative w-full max-w-md aspect-square rounded-sm overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.9)] border border-white/10 group bg-[#0B0A08] animate-canva-pan"
+            >
               <Image
                 src={activeStone.image}
                 alt={`${activeStone.name} Macro Photography`}
@@ -167,7 +170,10 @@ export default function StoneStory() {
           </div>
 
           {/* Right: Gemological Story & Scientific Specifications */}
-          <div className="lg:col-span-6 space-y-8">
+          <div
+            key={`stone-text-${activeStone.id}`}
+            className="lg:col-span-6 space-y-8 animate-canva-rise"
+          >
             <div>
               <span
                 className="text-[10px] uppercase font-sans tracking-[0.35em] block mb-2"
