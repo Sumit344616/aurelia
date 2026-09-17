@@ -173,7 +173,7 @@ export default function StoneStory() {
                 className="text-[10px] uppercase font-sans tracking-[0.35em] block mb-2"
                 style={{ color: activeStone.accentColor }}
               >
-                {activeStone.name} // Provenance
+                {activeStone.name} · Provenance
               </span>
               <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#F5F0E8] font-light leading-tight">
                 {activeStone.subtitle}

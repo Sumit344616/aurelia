@@ -705,7 +705,7 @@ export default function Diamond3DCanvas({
     let rotY = 0;
     let rotZ = 0;
     let scale = 1.0;
-    let angleLabel = "01 // FRONT ELEVATION";
+    let angleLabel = "01 · FRONT ELEVATION";
 
     if (p <= 0.22) {
       const localT = p / 0.22;
@@ -714,28 +714,28 @@ export default function Diamond3DCanvas({
       rotZ = THREE.MathUtils.lerp(0, -0.06, localT);
       scale = THREE.MathUtils.lerp(1.0, 1.08, localT);
       angleLabel =
-        localT < 0.5 ? "01 // FRONT ELEVATION" : "02 // RIGHT CROWN PROFILE";
+        localT < 0.5 ? "01 · FRONT ELEVATION" : "02 · RIGHT CROWN PROFILE";
     } else if (p <= 0.5) {
       const localT = (p - 0.22) / 0.28;
       rotX = THREE.MathUtils.lerp(0.15, 0.72, localT);
       rotY = THREE.MathUtils.lerp(0.65, -0.45, localT);
       rotZ = THREE.MathUtils.lerp(-0.06, 0.18, localT);
       scale = THREE.MathUtils.lerp(1.08, 1.18, localT);
-      angleLabel = "03 // TOP TABLE & GEOMETRIC FACETS";
+      angleLabel = "03 · TOP TABLE & GEOMETRIC FACETS";
     } else if (p <= 0.76) {
       const localT = (p - 0.5) / 0.26;
       rotX = THREE.MathUtils.lerp(0.72, -0.65, localT);
       rotY = THREE.MathUtils.lerp(-0.45, 1.45, localT);
       rotZ = THREE.MathUtils.lerp(0.18, -0.15, localT);
       scale = THREE.MathUtils.lerp(1.18, 1.28, localT);
-      angleLabel = "04 // STEP-FACETED PAVILION & CULET";
+      angleLabel = "04 · STEP-FACETED PAVILION & CULET";
     } else {
       const localT = (p - 0.76) / 0.24;
       rotX = THREE.MathUtils.lerp(-0.65, 0.08, localT);
       rotY = THREE.MathUtils.lerp(1.45, Math.PI * 2, localT);
       rotZ = THREE.MathUtils.lerp(-0.15, 0, localT);
       scale = THREE.MathUtils.lerp(1.28, 1.45, localT);
-      angleLabel = "05 // 360° TOTAL INSPECTION";
+      angleLabel = "05 · 360° TOTAL INSPECTION";
     }
 
     targetRotationRef.current = { x: rotX, y: rotY, z: rotZ };

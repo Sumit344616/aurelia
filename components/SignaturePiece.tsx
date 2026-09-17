@@ -94,7 +94,7 @@ export default function SignaturePiece({ onEnquire }: SignaturePieceProps) {
         {/* Top Minimal Header */}
         <div className="relative z-20 flex items-center justify-between border-b border-white/5 pb-4">
           <span className="text-[10px] uppercase font-sans tracking-[0.4em] text-[#C6A15B]">
-            Pinnacle Masterpiece // No. 01
+            Pinnacle Masterpiece · No. 01
           </span>
           <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#F5F0E8]/40">
             Confidential Provenance

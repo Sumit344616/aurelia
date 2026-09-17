@@ -147,7 +147,7 @@ export default function NecklaceSection() {
 
             <div className="absolute bottom-6 left-6 right-6">
               <span className="text-[9px] uppercase font-sans tracking-[0.3em] text-[#C6A15B]">
-                Focus // Macro 01
+                Focus · Macro 01
               </span>
               <p className="font-serif text-xl text-[#F5F0E8] font-light mt-1">
                 The Cascade Droplet

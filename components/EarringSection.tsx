@@ -170,7 +170,7 @@ export default function EarringSection() {
         >
           <div>
             <span className="text-[9px] uppercase font-sans tracking-[0.3em] text-[#C6A15B] block mb-1.5">
-              01 // Dynamic Balance
+              01 · Dynamic Balance
             </span>
             <p className="text-xs text-[#F5F0E8]/70 font-light leading-relaxed">
               Multi-axis platinum linkages engineered for frictionless sway and featherlight all-evening wear.
@@ -178,7 +178,7 @@ export default function EarringSection() {
           </div>
           <div>
             <span className="text-[9px] uppercase font-sans tracking-[0.3em] text-[#C6A15B] block mb-1.5">
-              02 // Facet Alignment
+              02 · Facet Alignment
             </span>
             <p className="text-xs text-[#F5F0E8]/70 font-light leading-relaxed">
               D-Flawless marquise diamonds positioned at opposing 45° angles for omnidirectional refraction.
@@ -186,7 +186,7 @@ export default function EarringSection() {
           </div>
           <div>
             <span className="text-[9px] uppercase font-sans tracking-[0.3em] text-[#C6A15B] block mb-1.5">
-              03 // Place Vendôme Handcraft
+              03 · Place Vendôme Handcraft
             </span>
             <p className="text-xs text-[#F5F0E8]/70 font-light leading-relaxed">
               Over 140 meticulous atelier hours of hand-sculpted prongs and mirror-polished noble platinum.

@@ -373,7 +373,7 @@ export default function Hero() {
             <div className="flex items-center gap-3">
               <span className="w-6 h-[1px] bg-[#C6A15B]" />
               <span className="text-[10px] uppercase font-sans tracking-[0.35em] text-[#C6A15B]">
-                Place Vendôme Archive // Act 02
+                Place Vendôme Archive · Act 02
               </span>
             </div>
             <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-white/40 hidden sm:block">
@@ -424,7 +424,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#070605]/85 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <span className="text-[9px] uppercase font-sans tracking-[0.3em] text-[#C6A15B]">
-                  Atelier Bench // Paris
+                  Atelier Bench · Paris
                 </span>
                 <p className="font-serif text-lg sm:text-xl text-[#F5F0E8] font-light">
                   The Art of the Setting
