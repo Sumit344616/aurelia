@@ -44,7 +44,7 @@ export default function Home() {
       {/* Floating Transparent Luxury Header */}
       <Navbar onOpenConsultation={() => handleOpenConsultation()} />
 
-      <main className="relative w-full bg-[#0B0A08] text-[#F5F0E8] overflow-hidden">
+      <main className="relative w-full bg-[#0B0A08] text-[#F5F0E8] overflow-x-clip">
         {/* The 7 Signature Moments & Continuous Visual Story */}
         <Hero />
 

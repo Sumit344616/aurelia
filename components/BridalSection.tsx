@@ -45,7 +45,7 @@ export default function BridalSection() {
       ref={sectionRef}
       id="bridal"
       style={{ zIndex: 30 }}
-      className="relative z-30 w-full min-h-screen lg:h-screen lg:max-h-[960px] flex flex-col justify-center py-6 sm:py-10 lg:py-12 bg-[#12060A] text-[#F5F0E8] overflow-hidden border-t border-[#C6A15B]/30 shadow-[0_-50px_140px_rgba(0,0,0,0.99)]"
+      className="relative z-30 w-full min-h-screen lg:h-screen lg:max-h-[960px] flex flex-col justify-center py-6 sm:py-10 lg:py-12 bg-[#12060A] text-[#F5F0E8] overflow-hidden border-t-2 border-[#C6A15B]/40 shadow-[0_-25px_60px_rgba(198,161,91,0.1),0_-50px_140px_rgba(0,0,0,1)]"
     >
       {/* Subtle deep wine atmospheric gradient */}
       <div className="absolute inset-0 bg-radial from-[#6F1724]/20 via-transparent to-transparent pointer-events-none" />

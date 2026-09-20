@@ -56,7 +56,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-full flex flex-col bg-[#0B0A08] text-[#F5F0E8] overflow-x-hidden selection:bg-[#C6A15B] selection:text-[#0B0A08]"
+        className="min-h-full flex flex-col bg-[#0B0A08] text-[#F5F0E8] overflow-x-clip selection:bg-[#C6A15B] selection:text-[#0B0A08]"
         suppressHydrationWarning
       >
         <div className="film-grain" aria-hidden="true" />
