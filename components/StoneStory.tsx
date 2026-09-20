@@ -149,12 +149,13 @@ export default function StoneStory() {
           <div className="lg:col-span-6 flex justify-center">
             <div
               key={`stone-img-${activeStone.id}`}
-              className="relative w-full max-w-md aspect-square rounded-sm overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.9)] border border-white/10 group bg-[#0B0A08] animate-canva-pan"
+              className="relative w-full max-w-md aspect-square rounded-sm overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.9)] border border-white/10 group bg-[#0B0A08] animate-image-rise-up will-change-transform"
             >
               <Image
                 src={activeStone.image}
                 alt={`${activeStone.name} Macro Photography`}
                 fill
+                priority
                 className="object-cover object-center transition-all duration-1000 ease-out group-hover:scale-105"
                 sizes="(max-width: 1024px) 90vw, 45vw"
               />

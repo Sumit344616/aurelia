@@ -36,8 +36,14 @@ export default function Hero() {
   const scene5Word2Ref = useRef<HTMLDivElement>(null);
   const scene5Word3Ref = useRef<HTMLDivElement>(null);
 
-  // Scene 06: Monogram Closure
+  // Scene 06: Monogram Closure & Cinematic Reveal
   const scene6LogoRef = useRef<HTMLDivElement>(null);
+  const scene6AuraRef = useRef<HTMLDivElement>(null);
+  const scene6MonogramRef = useRef<HTMLDivElement>(null);
+  const scene6TitleRef = useRef<HTMLHeadingElement>(null);
+  const scene6SubtitleRef = useRef<HTMLParagraphElement>(null);
+  const scene6LineRef = useRef<HTMLDivElement>(null);
+  const scene6HintRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -225,29 +231,74 @@ export default function Hero() {
         5.2
       );
 
-      // Scene 06: Monogram Closure
+      // Scene 06: Monogram Closure with Cinematic Aura & Anamorphic Reveal
       scrollTl.to(
         scene5TextRef.current,
         {
           opacity: 0,
-          filter: "blur(8px)",
+          filter: "blur(12px)",
+          scale: 0.95,
           ease: "power2.inOut",
-          duration: 1.2,
+          duration: 1.0,
         },
         6.6
       );
 
+      // Base container fade-in
       scrollTl.fromTo(
         scene6LogoRef.current,
-        { opacity: 0, scale: 0.92 },
-        { opacity: 1, scale: 1.0, ease: "power2.out", duration: 1.4 },
+        { opacity: 0 },
+        { opacity: 1, duration: 0.6 },
+        6.8
+      );
+
+      // 1. Cinematic Radial Aura Bloom
+      scrollTl.fromTo(
+        scene6AuraRef.current,
+        { scale: 0.35, opacity: 0 },
+        { scale: 1.25, opacity: 0.75, ease: "power2.out", duration: 1.5 },
         7.0
       );
 
-      scrollTl.to(scene6LogoRef.current, {
-        opacity: 0.9,
-        duration: 0.8,
-      });
+      // 2. Monogram Macro Reveal: Descends from macro scale into razor-sharp focus
+      scrollTl.fromTo(
+        scene6MonogramRef.current,
+        { scale: 1.45, opacity: 0, filter: "blur(10px)", y: -25 },
+        { scale: 1.0, opacity: 1, filter: "blur(0px)", y: 0, ease: "power3.out", duration: 1.4 },
+        7.1
+      );
+
+      // 3. Title "AURELIA": Anamorphic letter-spacing expansion and rise
+      scrollTl.fromTo(
+        scene6TitleRef.current,
+        { y: 35, opacity: 0, letterSpacing: "0.12em", filter: "blur(8px)" },
+        { y: 0, opacity: 1, letterSpacing: "0.28em", filter: "blur(0px)", ease: "power3.out", duration: 1.4 },
+        7.3
+      );
+
+      // 4. Subtitle "Jewels of Eternity": Gold tracking expansion
+      scrollTl.fromTo(
+        scene6SubtitleRef.current,
+        { y: 20, opacity: 0, letterSpacing: "0.3em" },
+        { y: 0, opacity: 1, letterSpacing: "0.5em", ease: "power2.out", duration: 1.2 },
+        7.5
+      );
+
+      // 5. Divider Line draws outward from center with diamond accent
+      scrollTl.fromTo(
+        scene6LineRef.current,
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, ease: "power2.inOut", duration: 1.0 },
+        7.7
+      );
+
+      // 6. Runway Invite: Gentle floating reveal
+      scrollTl.fromTo(
+        scene6HintRef.current,
+        { y: 15, opacity: 0 },
+        { y: 0, opacity: 1, ease: "power2.out", duration: 0.8 },
+        7.9
+      );
     }, containerRef);
 
     return () => ctx.revert();
@@ -303,9 +354,9 @@ export default function Hero() {
           {/* Scene 01 Typography Overlay (With Canva-Style Mask Wipes & Fades) */}
           <div
             ref={scene1TextRef}
-            className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-16 flex flex-col justify-between h-full pt-32 pb-14 pointer-events-none"
+            className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-16 flex flex-col justify-center h-full pt-16 sm:pt-20 pb-10 pointer-events-none"
           >
-            <div>
+            <div className="my-auto">
               {/* Metadata with Drawing Line */}
               <div className="flex items-center gap-3 overflow-hidden">
                 <div
@@ -499,24 +550,61 @@ export default function Hero() {
         </div>
 
         {/* ==================================================== */}
-        {/* SCENE 06: MONOGRAM CLOSURE & HERO RELEASE            */}
+        {/* SCENE 06: MONOGRAM CLOSURE & HERO RELEASE (CINEMATIC) */}
         {/* ==================================================== */}
         <div
           ref={scene6LogoRef}
-          className="absolute inset-0 w-full h-full bg-[#070605] flex flex-col items-center justify-center pointer-events-none opacity-0 z-40 px-6"
+          className="absolute inset-0 w-full h-full bg-[#070605] flex flex-col items-center justify-center pointer-events-none opacity-0 z-40 px-6 overflow-hidden select-none"
         >
-          <div className="flex flex-col items-center text-center">
-            <BrandLogo variant="monogram" size="lg" className="mb-6" />
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-[0.25em] text-[#F5F0E8] font-light uppercase">
+          {/* Cinematic Radial Aura Bloom */}
+          <div
+            ref={scene6AuraRef}
+            className="absolute w-[450px] h-[450px] sm:w-[650px] sm:h-[650px] rounded-full pointer-events-none will-change-transform blur-2xl opacity-0"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(198,161,91,0.22) 0%, rgba(198,161,91,0.08) 45%, transparent 70%)",
+            }}
+          />
+
+          <div className="relative z-10 flex flex-col items-center text-center">
+            {/* Monogram with Macro Descent Reveal */}
+            <div ref={scene6MonogramRef} className="will-change-transform mb-6">
+              <BrandLogo variant="monogram" size="lg" />
+            </div>
+
+            {/* Title with Anamorphic Letter-Spacing Expansion */}
+            <h2
+              ref={scene6TitleRef}
+              className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#F5F0E8] font-light uppercase tracking-[0.28em] will-change-transform"
+            >
               Aurelia
             </h2>
-            <p className="text-[10px] md:text-xs font-sans uppercase tracking-[0.5em] text-[#C6A15B] mt-4">
+
+            {/* Subtitle with Gold Tracking */}
+            <p
+              ref={scene6SubtitleRef}
+              className="text-[11px] md:text-xs font-sans uppercase tracking-[0.5em] text-[#C6A15B] mt-4 will-change-transform"
+            >
               Jewels of Eternity
             </p>
-            <div className="w-16 h-[1px] bg-[#C6A15B]/40 my-6" />
-            <span className="text-[11px] font-sans tracking-[0.3em] text-[#F5F0E8]/50 uppercase">
-              The Collection Runway Awaits ↓
-            </span>
+
+            {/* Center-Expanding Divider Line with Diamond Accent */}
+            <div
+              ref={scene6LineRef}
+              className="flex items-center justify-center gap-3 my-7 will-change-transform"
+            >
+              <div className="w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent to-[#C6A15B]/70" />
+              <span className="text-[8px] text-[#C6A15B]">◆</span>
+              <div className="w-12 sm:w-16 h-[1px] bg-gradient-to-l from-transparent to-[#C6A15B]/70" />
+            </div>
+
+            {/* Collection Runway Invite with Floating Arrow */}
+            <div ref={scene6HintRef} className="will-change-transform">
+              <span className="text-[11px] font-sans tracking-[0.35em] text-[#F5F0E8]/60 uppercase flex items-center gap-2">
+                The Collection Runway Awaits
+                <span className="inline-block animate-bounce text-[#C6A15B]">↓</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>

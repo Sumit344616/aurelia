@@ -178,19 +178,42 @@ body {
   animation: canvaPanReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes canvaTextRise {
+/* Canva-style Photo Rise Animation (Clean upward glide, zero blur, zero scale pop) */
+@keyframes canvaPhotoRise {
   0% {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translate3d(0, 70px, 0);
+  }
+  30% {
+    opacity: 0.7;
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-image-rise-up {
+  animation: canvaPhotoRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@keyframes canvaTextRise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .animate-canva-rise {
-  animation: canvaTextRise 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: canvaTextRise 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 @keyframes canvaSoftDrift {
@@ -206,4 +229,44 @@ body {
 
 .animate-canva-drift {
   animation: canvaSoftDrift 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes canvaBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(10px);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.15) translateY(-2px);
+    filter: blur(0px);
+  }
+  80% {
+    transform: scale(0.96) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.animate-canva-burst {
+  animation: canvaBurst 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
