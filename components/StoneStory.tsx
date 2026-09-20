@@ -90,7 +90,7 @@ export default function StoneStory() {
   return (
     <section
       id="gemstones"
-      className="relative w-full min-h-screen py-28 md:py-36 transition-colors duration-1000 text-[#F5F0E8] overflow-hidden"
+      className="relative w-full min-h-screen py-16 sm:py-24 md:py-32 transition-colors duration-1000 text-[#F5F0E8] overflow-hidden"
       style={{
         background: `linear-gradient(180deg, #0B0A08 0%, ${
           activeStone.id === "emerald"
@@ -105,28 +105,28 @@ export default function StoneStory() {
         } 50%, #0B0A08 100%)`,
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-16">
         {/* Section Headline */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <span className="text-[10px] md:text-xs uppercase font-sans tracking-[0.45em] text-[#C6A15B]">
             Gemology & Earth Origin
           </span>
-          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#F5F0E8] font-light mt-3 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-7xl text-[#F5F0E8] font-light mt-2.5 tracking-tight">
             THE STONE <span className="italic text-[#C6A15B]">IS THE STORY.</span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#F5F0E8]/60 font-light mt-4 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#F5F0E8]/60 font-light mt-3 sm:mt-4 max-w-xl mx-auto leading-relaxed">
             Every gemstone selected by Aurelia is untreated, ethically acquired,
             and examined for extraordinary optical character.
           </p>
         </div>
 
         {/* Gemstone Atmosphere Selector Tabs */}
-        <div className="flex items-center justify-center flex-wrap gap-3 sm:gap-6 mb-16 border-b border-white/10 pb-6">
+        <div className="flex items-center justify-center flex-wrap gap-2.5 sm:gap-6 mb-10 sm:mb-14 border-b border-white/10 pb-4 sm:pb-6">
           {GEMSTONES.map((gem) => (
             <button
               key={gem.id}
               onClick={() => setActiveStone(gem)}
-              className={`text-xs uppercase font-sans tracking-[0.3em] py-2 px-4 transition-all duration-500 relative ${
+              className={`text-[11px] sm:text-xs uppercase font-sans tracking-[0.3em] py-1.5 sm:py-2 px-3 sm:px-4 transition-all duration-500 relative cursor-pointer ${
                 activeStone.id === gem.id
                   ? "text-[#F5F0E8] font-medium"
                   : "text-[#F5F0E8]/40 hover:text-[#F5F0E8]"
@@ -144,7 +144,7 @@ export default function StoneStory() {
         </div>
 
         {/* Selected Gemstone Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
           {/* Left: Macro Gemstone Image */}
           <div className="lg:col-span-6 flex justify-center">
             <div

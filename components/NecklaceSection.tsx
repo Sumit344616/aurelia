@@ -47,21 +47,22 @@ export default function NecklaceSection() {
 
       // Floating detail card rises smoothly into view
       if (floatingDetailRef.current) {
+        const isDesktop = window.innerWidth >= 1024;
         gsap.fromTo(
           floatingDetailRef.current,
           {
-            y: 80,
+            y: isDesktop ? 80 : 30,
             opacity: 0,
           },
           {
-            y: -40,
+            y: isDesktop ? -40 : 0,
             opacity: 1,
             ease: "power2.out",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top center",
-              end: "center center",
-              scrub: 1.5,
+              start: isDesktop ? "top center" : "top 75%",
+              end: isDesktop ? "center center" : "top 25%",
+              scrub: isDesktop ? 1.5 : false,
             },
           }
         );
@@ -74,7 +75,7 @@ export default function NecklaceSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[140vh] bg-[#0B0A08] text-[#F5F0E8] overflow-hidden flex items-center justify-between py-24"
+      className="relative w-full min-h-screen lg:min-h-[130vh] bg-[#0B0A08] text-[#F5F0E8] overflow-hidden flex items-center justify-between py-16 sm:py-20 lg:py-24"
     >
       {/* Background Fullscreen Portrait with Vertical Parallax */}
       <div

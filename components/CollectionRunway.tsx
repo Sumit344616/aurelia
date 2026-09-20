@@ -123,10 +123,10 @@ export default function CollectionRunway({
     >
       <div
         ref={pinStageRef}
-        className="relative w-full h-screen overflow-hidden flex flex-col justify-between pt-20 pb-8 px-6 md:px-14"
+        className="relative w-full h-screen overflow-hidden flex flex-col justify-between pt-16 sm:pt-20 pb-6 sm:pb-8 px-4 sm:px-8 md:px-14"
       >
         {/* Top Editorial Header (Clean, Compact, No Overlap) */}
-        <div className="relative z-20 flex items-baseline justify-between border-b border-white/10 pb-3 shrink-0">
+        <div className="relative z-20 flex items-baseline justify-between border-b border-white/10 pb-2.5 sm:pb-3 shrink-0">
           <div className="flex items-baseline gap-4">
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#F5F0E8] font-light tracking-tight">
               THE COLLECTION.
@@ -160,14 +160,14 @@ export default function CollectionRunway({
         {/* Horizontal Moving Runway (Uniform Luxury Aspect Ratio Cards) */}
         <div
           ref={trackRef}
-          className="relative z-10 flex items-center my-auto gap-6 sm:gap-8 md:gap-10 will-change-transform py-2"
+          className="relative z-10 flex items-center my-auto gap-5 sm:gap-8 md:gap-10 will-change-transform py-1 sm:py-2"
         >
           {PIECES.map((piece) => (
             <div
               key={piece.id}
               data-cursor="explore"
               onClick={() => onSelectPiece(piece.name)}
-              className="shrink-0 flex flex-col w-[230px] sm:w-[260px] md:w-[280px] group cursor-pointer transition-all duration-500 hover:-translate-y-1.5"
+              className="shrink-0 flex flex-col w-[210px] sm:w-[250px] md:w-[280px] group cursor-pointer transition-all duration-500 hover:-translate-y-1.5"
             >
               {/* Image Container Uniform 3:4 Aspect Ratio */}
               <div className="relative w-full aspect-[3/4] overflow-hidden bg-[#141310] border border-white/10 shadow-[0_15px_50px_rgba(0,0,0,0.85)] group-hover:border-[#C6A15B]/40 transition-colors">

@@ -133,10 +133,17 @@ export default function SignaturePiece({ onEnquire }: SignaturePieceProps) {
                 onClick={() =>
                   onEnquire("The Sovereign Emerald Pinnacle Masterpiece")
                 }
-                className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#C6A15B] text-[#0B0A08] hover:bg-[#DFCA95] text-xs uppercase font-sans tracking-[0.3em] font-medium transition-all duration-300 shadow-[0_10px_35px_rgba(198,161,91,0.25)] group"
+                className="relative inline-flex items-center gap-3 px-8 py-3.5 border border-[#C6A15B] bg-[#0E0C09]/90 text-[#F5F0E8] overflow-hidden group cursor-pointer shadow-[0_10px_35px_rgba(0,0,0,0.6)] transition-all duration-300"
               >
-                <span>Enquire About the Piece</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                {/* Left-to-Right Fill Animation Curtain */}
+                <span
+                  className="absolute inset-0 bg-gradient-to-r from-[#C6A15B] via-[#E8D6AC] to-[#C6A15B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"
+                  aria-hidden="true"
+                />
+                <span className="relative z-10 text-xs uppercase font-sans tracking-[0.3em] font-medium group-hover:text-[#0A0907] transition-colors duration-400">
+                  Enquire About the Piece
+                </span>
+                <span className="relative z-10 text-[#C6A15B] group-hover:text-[#0A0907] transition-all duration-300 group-hover:translate-x-1 font-sans">
                   →
                 </span>
               </button>

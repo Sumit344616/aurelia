@@ -29,44 +29,64 @@ export default function FinalCTA({ onOpenConsultation }: FinalCTAProps) {
       </div>
 
       {/* Main Luxury Invitation */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center my-auto py-16">
-        <span className="text-[10px] md:text-xs uppercase font-sans tracking-[0.45em] text-[#C6A15B] mb-6 block">
+      <div className="relative z-10 max-w-3xl lg:max-w-4xl mx-auto px-5 sm:px-6 text-center my-auto py-10 sm:py-16">
+        <span className="text-[10px] md:text-xs uppercase font-sans tracking-[0.45em] text-[#C6A15B] block">
           The Invitation
         </span>
 
-        <h2 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#F5F0E8] font-light tracking-tight leading-[0.92]">
-          YOUR NEXT
-          <br />
-          HEIRLOOM
-          <br />
+        <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.75rem] text-[#F5F0E8] font-light mt-3 sm:mt-4 tracking-tight leading-[1.08] sm:leading-tight">
+          YOUR NEXT HEIRLOOM{" "}
+          <br className="hidden sm:inline" />
           <span className="italic text-[#C6A15B]">BEGINS HERE.</span>
         </h2>
 
-        <p className="mt-8 text-xs sm:text-sm md:text-base font-light text-[#F5F0E8]/70 tracking-[0.2em] uppercase max-w-lg mx-auto">
+        <p className="text-xs sm:text-sm md:text-base text-[#F5F0E8]/65 font-light mt-4 max-w-xl mx-auto leading-relaxed">
           Private consultations available in London, Paris, Mumbai, or your
           residence worldwide.
         </p>
 
-        {/* Action Buttons */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
+        {/* Action Buttons with Left-to-Right Fill Hover Animation */}
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full max-w-md mx-auto">
+          {/* Primary CTA: Liquid Gold Fill from Left to Right */}
           <button
             onClick={onOpenConsultation}
-            className="w-full sm:w-auto px-10 py-4 bg-[#C6A15B] text-[#0B0A08] hover:bg-[#DFCA95] text-xs uppercase font-sans tracking-[0.3em] font-medium transition-all duration-300 shadow-[0_15px_40px_rgba(198,161,91,0.25)]"
+            className="relative w-full sm:w-auto px-7 sm:px-9 py-3.5 border border-[#C6A15B] bg-[#0E0C09]/90 text-[#F5F0E8] overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.6)] transition-all duration-300"
           >
-            Begin a Private Consultation →
+            {/* Left-to-Right Fill Animation Curtain */}
+            <span
+              className="absolute inset-0 bg-gradient-to-r from-[#C6A15B] via-[#E8D6AC] to-[#C6A15B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"
+              aria-hidden="true"
+            />
+            <span className="relative z-10 text-[11px] uppercase font-sans tracking-[0.25em] font-semibold text-[#F5F0E8] group-hover:text-[#0A0907] transition-colors duration-400 flex items-center justify-center gap-3">
+              <span>Begin Private Consultation</span>
+              <span className="text-[#C6A15B] group-hover:text-[#0A0907] transition-all duration-300 group-hover:translate-x-1 font-sans">
+                →
+              </span>
+            </span>
           </button>
 
+          {/* Secondary CTA: Champagne Fill from Left to Right */}
           <button
             onClick={onOpenConsultation}
-            className="w-full sm:w-auto px-8 py-4 border border-[#C6A15B]/40 hover:border-[#C6A15B] text-xs uppercase font-sans tracking-[0.3em] text-[#F5F0E8] hover:bg-[#C6A15B]/10 transition-all duration-300"
+            className="relative w-full sm:w-auto px-7 sm:px-8 py-3.5 border border-[#C6A15B]/50 bg-[#070605]/80 text-[#F5F0E8] overflow-hidden group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-300"
           >
-            Visit the Atelier →
+            {/* Left-to-Right Fill Animation Curtain */}
+            <span
+              className="absolute inset-0 bg-gradient-to-r from-[#C6A15B] via-[#E8D6AC] to-[#C6A15B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"
+              aria-hidden="true"
+            />
+            <span className="relative z-10 text-[11px] uppercase font-sans tracking-[0.25em] font-light text-[#F5F0E8] group-hover:text-[#0A0907] transition-colors duration-400 flex items-center justify-center gap-2.5">
+              <span>Visit the Atelier</span>
+              <span className="text-[#C6A15B] group-hover:text-[#0A0907] transition-all duration-300 group-hover:translate-x-1 font-sans">
+                →
+              </span>
+            </span>
           </button>
         </div>
       </div>
 
       {/* Bottom Quiet Note */}
-      <div className="relative z-10 pb-12 text-center text-[10px] uppercase font-sans tracking-[0.3em] text-[#F5F0E8]/40">
+      <div className="relative z-10 pb-8 sm:pb-12 text-center text-[9px] sm:text-[10px] uppercase font-sans tracking-[0.3em] text-[#F5F0E8]/40">
         Discretion Assured · By Appointment Only
       </div>
     </section>

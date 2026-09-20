@@ -179,9 +179,19 @@ export default function RingExperience({ onEnquireRing }: RingExperienceProps) {
             <div className="pt-0.5">
               <button
                 onClick={() => onEnquireRing(commissionString)}
-                className="w-full py-3 bg-[#C6A15B] text-[#0B0A08] hover:bg-[#DFCA95] text-[11px] uppercase font-sans tracking-[0.28em] font-medium transition-all duration-300 shadow-[0_10px_25px_rgba(198,161,91,0.2)]"
+                className="relative w-full py-3 border border-[#C6A15B] bg-[#0E0C09]/90 text-[#F5F0E8] overflow-hidden group cursor-pointer shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition-all duration-300"
               >
-                Request Bespoke Allocation →
+                {/* Left-to-Right Fill Animation Curtain */}
+                <span
+                  className="absolute inset-0 bg-gradient-to-r from-[#C6A15B] via-[#E8D6AC] to-[#C6A15B] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"
+                  aria-hidden="true"
+                />
+                <span className="relative z-10 text-[11px] uppercase font-sans tracking-[0.28em] font-medium group-hover:text-[#0A0907] transition-colors duration-400 flex items-center justify-center gap-2">
+                  <span>Request Bespoke Allocation</span>
+                  <span className="text-[#C6A15B] group-hover:text-[#0A0907] transition-all duration-300 group-hover:translate-x-1 font-sans">
+                    →
+                  </span>
+                </span>
               </button>
               <p className="text-[8px] text-center text-[#F5F0E8]/40 mt-1.5 font-light tracking-wide">
                 Confidential private allocation with Master Gemologist.

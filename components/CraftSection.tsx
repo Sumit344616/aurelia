@@ -60,16 +60,16 @@ export default function CraftSection() {
   return (
     <section
       id="craft"
-      className="relative w-full py-28 md:py-36 bg-[#0B0A08] text-[#F5F0E8] overflow-hidden"
+      className="relative w-full py-16 sm:py-24 md:py-32 bg-[#0B0A08] text-[#F5F0E8] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-16">
         {/* Top Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/5 pb-8 mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/5 pb-6 sm:pb-8 mb-10 sm:mb-14 gap-5 sm:gap-6">
           <div>
             <span className="text-[10px] md:text-xs uppercase font-sans tracking-[0.4em] text-[#C6A15B]">
               Place Vendôme & Indian Atelier
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl text-[#F5F0E8] font-light mt-2 tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-7xl text-[#F5F0E8] font-light mt-2 tracking-tight">
               THE ART OF <span className="italic text-[#C6A15B]">MAKING.</span>
             </h2>
           </div>
@@ -80,7 +80,7 @@ export default function CraftSection() {
         </div>
 
         {/* Master Visual & Active Process Interaction */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
           {/* Left: Authentic Master Goldsmith Photograph */}
           <div className="lg:col-span-7">
             <div className="relative aspect-[3/2] overflow-hidden border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.9)] bg-[#141310] group">
@@ -92,12 +92,12 @@ export default function CraftSection() {
                 sizes="(max-width: 1024px) 100vw, 60vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0A08]/90 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex items-end justify-between">
                 <div>
                   <span className="text-[9px] uppercase font-sans tracking-[0.3em] text-[#C6A15B]">
                     Atelier Place Vendôme
                   </span>
-                  <p className="font-serif text-xl sm:text-2xl text-[#F5F0E8] font-light mt-1">
+                  <p className="font-serif text-lg sm:text-2xl text-[#F5F0E8] font-light mt-0.5 sm:mt-1">
                     The Setter&apos;s Bench
                   </p>
                 </div>
@@ -109,19 +109,19 @@ export default function CraftSection() {
           </div>
 
           {/* Right: The 5-Stage Editorial Sequence */}
-          <div className="lg:col-span-5 space-y-4">
-            <span className="text-[10px] uppercase font-sans tracking-[0.35em] text-[#C6A15B] block mb-2">
+          <div className="lg:col-span-5 space-y-3 sm:space-y-4">
+            <span className="text-[10px] uppercase font-sans tracking-[0.35em] text-[#C6A15B] block mb-1 sm:mb-2">
               The Metamorphosis Sequence
             </span>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5 sm:space-y-3">
               {STAGES.map((stage, idx) => {
                 const isActive = activeStageIndex === idx;
                 return (
                   <div
                     key={stage.step}
                     onClick={() => setActiveStageIndex(idx)}
-                    className={`p-5 transition-all duration-500 border cursor-pointer ${
+                    className={`p-4 sm:p-5 transition-all duration-500 border cursor-pointer ${
                       isActive
                         ? "bg-[#141310] border-[#C6A15B] shadow-lg"
                         : "bg-transparent border-white/5 hover:border-white/20 opacity-60 hover:opacity-90"
