@@ -1,15 +1,54 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import BrandLogo from "./BrandLogo";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+  const wordmarkContainerRef = useRef<HTMLDivElement>(null);
+  const wordmarkTextRef = useRef<HTMLHeadingElement>(null);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      if (!wordmarkContainerRef.current || !wordmarkTextRef.current) return;
+
+      // Scroll-scrub slide: Starts smoothly shifted right and glides to dead-center as user enters footer
+      gsap.fromTo(
+        wordmarkTextRef.current,
+        {
+          x: 80,
+          opacity: 0.15,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 85%",
+            end: "top 30%",
+            scrub: 1,
+          },
+        }
+      );
+    }, footerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <footer className="relative w-full bg-[#050504] text-[#F5F0E8] border-t border-white/10 pt-20 pb-12 overflow-hidden">
+    <footer
+      ref={footerRef}
+      className="relative w-full bg-[#050504] text-[#F5F0E8] border-t border-white/10 pt-20 pb-12 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Upper Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/5">
@@ -97,11 +136,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Giant Architectural Wordmark */}
-        <div className="py-12 select-none border-b border-white/5">
+        {/* Giant Architectural Wordmark with Right-to-Center Scroll-Scrub Slide */}
+        <div
+          ref={wordmarkContainerRef}
+          className="py-10 sm:py-14 select-none border-b border-white/5 overflow-hidden w-full flex justify-center"
+        >
           <h2
+            ref={wordmarkTextRef}
             onClick={scrollToTop}
-            className="font-serif text-[18vw] leading-none tracking-[0.18em] text-center text-[#F5F0E8]/10 hover:text-[#C6A15B]/25 transition-colors duration-700 cursor-pointer uppercase"
+            title="Click to scroll to top"
+            className="font-serif text-[clamp(2.5rem,10.5vw,135px)] leading-none tracking-[0.06em] sm:tracking-[0.1em] whitespace-nowrap text-center text-[#F5F0E8]/15 hover:text-[#C6A15B]/40 transition-colors duration-700 cursor-pointer uppercase will-change-transform select-none max-w-full inline-block"
           >
             Aurelia
           </h2>
@@ -109,7 +153,7 @@ export default function Footer() {
 
         {/* Lower Legal & Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase font-sans tracking-[0.25em] text-[#F5F0E8]/40 gap-4">
-          <p>© {new Date().getFullYear()} Aurelia High Jewellery Maison. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Aurelia High Jewellery Maison · Sumit · All Rights Reserved.</p>
           <div className="flex items-center gap-6">
             <span className="hover:text-[#F5F0E8] cursor-pointer">Confidentiality Policy</span>
             <span>·</span>
