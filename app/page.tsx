@@ -21,6 +21,7 @@ import JournalSection from "@/components/JournalSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import ConsultationDrawer from "@/components/ConsultationDrawer";
+import BackToTop from "@/components/motion/BackToTop";
 
 export default function Home() {
   const [isConsultationOpen, setIsConsultationOpen] = useState<boolean>(false);
@@ -83,6 +84,9 @@ export default function Home() {
       </main>
 
       <Footer />
+      
+      {/* Floating Circular Scroll Progress Back to Top Button */}
+      <BackToTop />
 
       {/* Private Consultation Enquiry Drawer */}
       <ConsultationDrawer

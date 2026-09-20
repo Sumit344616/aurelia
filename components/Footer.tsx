@@ -11,7 +11,11 @@ export default function Footer() {
   const wordmarkTextRef = useRef<HTMLHeadingElement>(null);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined" && (window as any).__lenis) {
+      (window as any).__lenis.scrollTo(0, { duration: 1.6 });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
@@ -61,12 +65,15 @@ export default function Footer() {
               distinguished collectors.
             </p>
             <div className="pt-2">
-              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#C6A15B]">
+              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#C6A15B] block">
                 Private Client Office
               </span>
-              <p className="text-xs text-[#F5F0E8]/80 font-light mt-1">
+              <a
+                href="mailto:liaison@maisonaurelia.com"
+                className="text-xs text-[#F5F0E8]/75 hover:text-[#C6A15B] transition-colors font-light mt-1 inline-block no-underline"
+              >
                 liaison@maisonaurelia.com
-              </p>
+              </a>
             </div>
           </div>
 
@@ -75,11 +82,11 @@ export default function Footer() {
             <h4 className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#C6A15B]">
               Atelier Salons
             </h4>
-            <ul className="space-y-2 text-xs text-[#F5F0E8]/65 font-light">
-              <li>14 New Bond Street, London</li>
-              <li>26 Place Vendôme, Paris</li>
-              <li>Bandra West Atelier, Mumbai</li>
-              <li>720 Fifth Avenue, New York</li>
+            <ul className="space-y-2 text-xs text-[#F5F0E8]/60 font-light">
+              <li className="hover:text-[#F5F0E8] transition-colors">14 New Bond Street, London</li>
+              <li className="hover:text-[#F5F0E8] transition-colors">26 Place Vendôme, Paris</li>
+              <li className="hover:text-[#F5F0E8] transition-colors">Bandra West Atelier, Mumbai</li>
+              <li className="hover:text-[#F5F0E8] transition-colors">720 Fifth Avenue, New York</li>
             </ul>
           </div>
 
@@ -88,34 +95,34 @@ export default function Footer() {
             <h4 className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#C6A15B]">
               Navigation
             </h4>
-            <ul className="space-y-2 text-xs text-[#F5F0E8]/65 font-light">
+            <ul className="space-y-2 text-xs text-[#F5F0E8]/60 font-light">
               <li>
-                <a href="#collection" className="hover:text-[#C6A15B] transition-colors">
+                <a href="#collection" className="hover:text-[#C6A15B] transition-colors block">
                   The Collection
                 </a>
               </li>
               <li>
-                <a href="#ring-story" className="hover:text-[#C6A15B] transition-colors">
+                <a href="#ring-story" className="hover:text-[#C6A15B] transition-colors block">
                   Solitaire Rings
                 </a>
               </li>
               <li>
-                <a href="#gemstones" className="hover:text-[#C6A15B] transition-colors">
+                <a href="#gemstones" className="hover:text-[#C6A15B] transition-colors block">
                   The Gemstones
                 </a>
               </li>
               <li>
-                <a href="#craft" className="hover:text-[#C6A15B] transition-colors">
+                <a href="#craft" className="hover:text-[#C6A15B] transition-colors block">
                   The Craft
                 </a>
               </li>
               <li>
-                <a href="#bridal" className="hover:text-[#C6A15B] transition-colors">
+                <a href="#bridal" className="hover:text-[#C6A15B] transition-colors block">
                   Bridal Heirlooms
                 </a>
               </li>
               <li>
-                <a href="#journal" className="hover:text-[#C6A15B] transition-colors">
+                <a href="#journal" className="hover:text-[#C6A15B] transition-colors block">
                   Editorial Journal
                 </a>
               </li>
@@ -127,11 +134,11 @@ export default function Footer() {
             <h4 className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#C6A15B]">
               Connoisseurship
             </h4>
-            <ul className="space-y-2 text-xs text-[#F5F0E8]/65 font-light">
-              <li>Private Tenders</li>
-              <li>GIA & Gübelin Certification</li>
-              <li>Bespoke Commissions</li>
-              <li>Heritage Restoration</li>
+            <ul className="space-y-2 text-xs text-[#F5F0E8]/60 font-light">
+              <li className="hover:text-[#F5F0E8] transition-colors">Private Tenders</li>
+              <li className="hover:text-[#F5F0E8] transition-colors">GIA & Gübelin Certification</li>
+              <li className="hover:text-[#F5F0E8] transition-colors">Bespoke Commissions</li>
+              <li className="hover:text-[#F5F0E8] transition-colors">Heritage Restoration</li>
             </ul>
           </div>
         </div>
@@ -139,7 +146,7 @@ export default function Footer() {
         {/* Giant Architectural Wordmark with Right-to-Center Scroll-Scrub Slide */}
         <div
           ref={wordmarkContainerRef}
-          className="py-10 sm:py-14 select-none border-b border-white/5 overflow-hidden w-full flex justify-center"
+          className="py-10 sm:py-16 select-none overflow-hidden w-full flex justify-center border-b border-white/5"
         >
           <h2
             ref={wordmarkTextRef}
@@ -151,20 +158,22 @@ export default function Footer() {
           </h2>
         </div>
 
-        {/* Lower Legal & Copyright Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase font-sans tracking-[0.25em] text-[#F5F0E8]/40 gap-4">
-          <p>© {new Date().getFullYear()} Aurelia High Jewellery Maison · Sumit · All Rights Reserved.</p>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-[#F5F0E8] cursor-pointer">Confidentiality Policy</span>
-            <span>·</span>
-            <span className="hover:text-[#F5F0E8] cursor-pointer">Ethical Kimberley Charter</span>
-            <span>·</span>
-            <button
-              onClick={scrollToTop}
-              className="text-[#C6A15B] hover:text-[#DFCA95] transition-colors"
-            >
-              Back to Top ↑
-            </button>
+        {/* Lower Legal Baseline */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase font-sans tracking-[0.25em] text-[#F5F0E8]/40 gap-4 text-center sm:text-left">
+          {/* Copyright */}
+          <p className="whitespace-nowrap">
+            © {new Date().getFullYear()} Aurelia High Jewellery Maison · Sumit · All Rights Reserved.
+          </p>
+
+          {/* Confidentiality & Kimberley Charter */}
+          <div className="flex items-center gap-6 whitespace-nowrap">
+            <span className="hover:text-[#F5F0E8] transition-colors cursor-pointer">
+              Confidentiality Policy
+            </span>
+            <span className="text-[#C6A15B]/30">·</span>
+            <span className="hover:text-[#F5F0E8] transition-colors cursor-pointer">
+              Ethical Kimberley Charter
+            </span>
           </div>
         </div>
       </div>

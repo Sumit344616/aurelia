@@ -746,9 +746,6 @@ export default function Diamond3DCanvas({
     }
   }, [scrollProgress, onAngleChange]);
 
-  // -------------------------------------------------------------
-  // Mouse Drag / Touch Interactive Inspection Handlers
-  // -------------------------------------------------------------
   const handlePointerDown = (e: React.PointerEvent) => {
     isDraggingRef.current = true;
     previousMouseRef.current = { x: e.clientX, y: e.clientY };

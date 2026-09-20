@@ -255,31 +255,31 @@ export default function Hero() {
       // 1. Cinematic Radial Aura Bloom
       scrollTl.fromTo(
         scene6AuraRef.current,
-        { scale: 0.35, opacity: 0 },
-        { scale: 1.25, opacity: 0.75, ease: "power2.out", duration: 1.5 },
+        { scale: 0.5, opacity: 0 },
+        { scale: 1.15, opacity: 0.75, ease: "power2.out", duration: 1.5 },
         7.0
       );
 
-      // 2. Monogram Macro Reveal: Descends from macro scale into razor-sharp focus
+      // 2. Monogram Macro Reveal: Crisp descent without blur
       scrollTl.fromTo(
         scene6MonogramRef.current,
-        { scale: 1.45, opacity: 0, filter: "blur(10px)", y: -25 },
-        { scale: 1.0, opacity: 1, filter: "blur(0px)", y: 0, ease: "power3.out", duration: 1.4 },
+        { scale: 1.2, opacity: 0, y: -30 },
+        { scale: 1.0, opacity: 1, y: 0, ease: "power3.out", duration: 1.3 },
         7.1
       );
 
-      // 3. Title "AURELIA": Anamorphic letter-spacing expansion and rise
+      // 3. Title "AURELIA": Authentic Canva-style crisp Rise elevation
       scrollTl.fromTo(
         scene6TitleRef.current,
-        { y: 35, opacity: 0, letterSpacing: "0.12em", filter: "blur(8px)" },
-        { y: 0, opacity: 1, letterSpacing: "0.28em", filter: "blur(0px)", ease: "power3.out", duration: 1.4 },
+        { y: 65, opacity: 0, letterSpacing: "0.18em" },
+        { y: 0, opacity: 1, letterSpacing: "0.28em", ease: "power3.out", duration: 1.4 },
         7.3
       );
 
-      // 4. Subtitle "Jewels of Eternity": Gold tracking expansion
+      // 4. Subtitle "Jewels of Eternity": Gold tracking expansion and smooth rise
       scrollTl.fromTo(
         scene6SubtitleRef.current,
-        { y: 20, opacity: 0, letterSpacing: "0.3em" },
+        { y: 35, opacity: 0, letterSpacing: "0.35em" },
         { y: 0, opacity: 1, letterSpacing: "0.5em", ease: "power2.out", duration: 1.2 },
         7.5
       );
@@ -292,10 +292,10 @@ export default function Hero() {
         7.7
       );
 
-      // 6. Runway Invite: Gentle floating reveal
+      // 6. Runway Invite: Clean Canva-style rise reveal
       scrollTl.fromTo(
         scene6HintRef.current,
-        { y: 15, opacity: 0 },
+        { y: 25, opacity: 0 },
         { y: 0, opacity: 1, ease: "power2.out", duration: 0.8 },
         7.9
       );
@@ -556,26 +556,29 @@ export default function Hero() {
           ref={scene6LogoRef}
           className="absolute inset-0 w-full h-full bg-[#070605] flex flex-col items-center justify-center pointer-events-none opacity-0 z-40 px-6 overflow-hidden select-none"
         >
-          {/* Cinematic Radial Aura Bloom */}
+          {/* Cinematic Radial Aura Bloom with Breathing Ambient Pulse */}
           <div
             ref={scene6AuraRef}
-            className="absolute w-[450px] h-[450px] sm:w-[650px] sm:h-[650px] rounded-full pointer-events-none will-change-transform blur-2xl opacity-0"
+            className="absolute w-[450px] h-[450px] sm:w-[650px] sm:h-[650px] rounded-full pointer-events-none will-change-transform blur-2xl opacity-0 animate-aura-breathe"
             style={{
               background:
-                "radial-gradient(circle, rgba(198,161,91,0.22) 0%, rgba(198,161,91,0.08) 45%, transparent 70%)",
+                "radial-gradient(circle, rgba(198,161,91,0.25) 0%, rgba(198,161,91,0.08) 45%, transparent 70%)",
             }}
           />
 
           <div className="relative z-10 flex flex-col items-center text-center">
-            {/* Monogram with Macro Descent Reveal */}
-            <div ref={scene6MonogramRef} className="will-change-transform mb-6">
+            {/* Monogram with Macro Descent Reveal & Gentle Ambient Float */}
+            <div
+              ref={scene6MonogramRef}
+              className="will-change-transform mb-6 animate-monogram-float"
+            >
               <BrandLogo variant="monogram" size="lg" />
             </div>
 
-            {/* Title with Anamorphic Letter-Spacing Expansion */}
+            {/* Title with Canva-style Rise & Continuous Metallic Gold Shimmer */}
             <h2
               ref={scene6TitleRef}
-              className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#F5F0E8] font-light uppercase tracking-[0.28em] will-change-transform"
+              className="font-serif text-4xl sm:text-6xl md:text-7xl font-light uppercase tracking-[0.28em] will-change-transform gold-luxury-shimmer"
             >
               Aurelia
             </h2>
@@ -594,7 +597,7 @@ export default function Hero() {
               className="flex items-center justify-center gap-3 my-7 will-change-transform"
             >
               <div className="w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent to-[#C6A15B]/70" />
-              <span className="text-[8px] text-[#C6A15B]">◆</span>
+              <span className="text-[8px] text-[#C6A15B] animate-pulse">◆</span>
               <div className="w-12 sm:w-16 h-[1px] bg-gradient-to-l from-transparent to-[#C6A15B]/70" />
             </div>
 

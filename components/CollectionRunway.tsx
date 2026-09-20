@@ -184,33 +184,19 @@ export default function CollectionRunway({
 
                 {/* Hover Studio Light Sweep */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#C6A15B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
-                {/* Card Corner Index Badge */}
-                <div className="absolute top-3 left-3 text-[8.5px] font-sans tracking-[0.3em] text-[#C6A15B] uppercase">
-                  No. {piece.id}
-                </div>
-
-                {piece.isMarquee && (
-                  <div className="absolute top-3 right-3 bg-[#C6A15B] text-[#0B0A08] text-[7.5px] font-sans uppercase tracking-[0.2em] px-2 py-0.5 font-medium">
-                    Masterpiece
-                  </div>
-                )}
               </div>
 
-              {/* Editorial Piece Metadata (Proportionally Balanced, No Overlap) */}
-              <div className="mt-3 space-y-1">
-                <span className="text-[8px] uppercase font-sans tracking-[0.25em] text-[#C6A15B]">
+              {/* Editorial Piece Metadata (Clean, Spacious Luxury Presentation) */}
+              <div className="mt-3.5 space-y-1.5">
+                <span className="text-[8.5px] uppercase font-sans tracking-[0.28em] text-[#C6A15B] block">
                   {piece.category}
                 </span>
                 <h3 className="font-serif text-base sm:text-lg text-[#F5F0E8] font-light group-hover:text-[#C6A15B] transition-colors line-clamp-1">
                   {piece.name}
                 </h3>
-                <p className="text-[10px] text-[#F5F0E8]/60 font-light line-clamp-1">
-                  {piece.subtitle}
-                </p>
-                <div className="pt-1.5 flex items-center justify-between border-t border-white/10 text-[8.5px] font-sans uppercase tracking-[0.2em] text-[#F5F0E8]/40">
+                <div className="pt-2 flex items-center justify-between border-t border-white/10 text-[8.5px] font-sans uppercase tracking-[0.2em] text-[#F5F0E8]/50">
                   <span className="truncate max-w-[170px]">{piece.materials}</span>
-                  <span className="text-[#C6A15B] group-hover:translate-x-1 transition-transform shrink-0">
+                  <span className="text-[#C6A15B] group-hover:translate-x-1 transition-transform shrink-0 font-medium">
                     Inquire →
                   </span>
                 </div>

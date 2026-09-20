@@ -30,6 +30,12 @@ export const metadata: Metadata = {
     "Heirloom Bridal Jewellery",
     "Modern Indian Luxury",
   ],
+  formatDetection: {
+    telephone: false,
+    date: false,
+    address: false,
+    email: false,
+  },
   openGraph: {
     title: "AURELIA — High Jewellery Maison | Jewels of Eternity",
     description:
